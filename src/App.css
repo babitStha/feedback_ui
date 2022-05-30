@@ -1,38 +1,170 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+*,body,html{
+  padding: 0;
+  margin:0;
+  box-sizing: border-box;
+  font-family: 'Source Code Pro', monospace;
+}
+
+body{
+  background-color: #8c38da;
+}
+.header{
+  background-color: #4136a1;
+  color: ghostwhite;
   text-align: center;
+  font-family: monospace;
+  padding: 10px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.feedback, 
+.form-container {
+  background:rgb(206, 17, 121);
+  width:75vw;
+  margin:5px auto;
+  padding: 20px 30px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px #414040;
+  
+}
+.count{
+  padding:5px 10px;
+  align-self: flex-end;
+  color: ghostwhite;
+  font-weight: 900;
+  text-align: right;
+
+}
+.feedback-list{
+  list-style: none;
+  width: 100%;
+}
+.feedback-item{
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 30px;
+  margin: 20px;
+  padding: 20px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px 2px rgb(53, 52, 52);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.feedback-item__rating{
+  background-color: #8c38da;
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 40px;
+  text-align: center;
+  margin-top: -15px;
+  color: #f2f2f2;
+  font-size: 20px;
+  font-weight: 900;
+  padding: 5px 10px;
+  border-radius: 50%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.feedback-item__text{
+  font-size: 20px;
+  color: #0a4058;
+  font-weight: 600;
+}
+
+.feedback-form{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  position: relative;
+  align-items: center;
+}
+
+.feedback-ratings{
+  margin: 20px;
+}
+.feedback-ratings span {
+  display: inline-block;
+  background-color: #4b114be8;
+  color: white;
+  margin: 10px;
+  padding: 5px 15px;
+  border-radius: 10px;
+  transition: background-color .3s ease-in-out ;
+}
+.feedback-ratings span:hover, .feedback-ratings span:active,.feedback-ratings span:focus {
+  color: #4b114be8;
+  background-color: white;
+}
+.feedback-form p, .form-close{
+  display: inline-block;
+  font-weight: 600;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.form-close{
+  cursor: pointer;
+  position: absolute;
+  right: 0;
+  top: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.form-close:hover{
+  transform: scale(1.5);
+  color: #0a4058;
+}
+.button{
+  cursor: pointer;
+  padding: 15px 20px;
+  border-radius: 10px;
+  margin: 15px;
+  font-size: 15px;
+  font-weight: 600;
+}
+.button:hover{
+  background-color:#0a4058;
+  color: #f2f2f2;
+}
+
+.submit{
+  width: 100px;
+  min-width: max-content;
+}
+.feedback-input, .feedback-input:focus {
+  width: 20vw;
+  min-width: 200px;
+  min-height: max-content;
+  height: 70px;
+  border-radius: 10px;
+  padding-left: 5px;
+  outline: none;
+  box-shadow: 2px 2px 2px 2px #4b114be8;
+}
+
+.active{
+  background-color: red !important;
+}
+@media screen and (max-width: 480px){
+  .feedback,
+  .feedback-form{
+    margin:0 auto;
+    width: 90%;
+    padding: 20px 30px;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 2px #414040;
+    
   }
-  to {
-    transform: rotate(360deg);
+  .feedback-item{
+    margin: 15px 0px;
+    padding: 20px;
+    width: 100%;
+    
   }
+  .feedback-item__rating,
+  .feedback-item__text{
+    font-size: 15px;
+    font-weight: 500;
+  }
+  
 }
